@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Chocolate Derretido</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: url('fundo.jpeg') no-repeat center center;
+      background-attachment: fixed;
+      background-position: center center;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .conteudo {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #3e2f1c;
+      padding-top: 100px;
+    }
+
+    .conteudo h1 {
+      font-size: 3em;
+      text-shadow: 1px 1px 3px #fff;
+    }
+
+    .conteudo p {
+      font-size: 1.5em;
+    }
+
+    .chocolate-topo {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to bottom, #5c3a21 60%, transparent 100%);
+      border-bottom-left-radius: 50% 20px;
+      border-bottom-right-radius: 50% 20px;
+      z-index: 3;
+      animation: escorrer 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes escorrer {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(10px); }
+    }
+
+    .coelhinhos {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      animation: pular 1.5s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    @keyframes pular {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .ovos-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .ovo {
+      position: absolute;
+      bottom: -50px;
+      width: 20px;
+      height: 30px;
+      border-radius: 50% 50% 45% 45%;
+      opacity: 0.7;
+      animation: subir 10s linear infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .ovo:hover {
+      transform: rotate(20deg) scale(1.2);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+
+    .ovo1 { left: 20%; background: pink; animation-delay: 0s; }
+    .ovo2 { left: 50%; background: lightblue; animation-delay: 3s; }
+    .ovo3 { left: 80%; background: lightgreen; animation-delay: 6s; }
+
+    @keyframes subir {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-120vh); }
+    }
+
+    .textos {
+      max-width: 800px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      color: #4d2e1e;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .textos h2 {
+      color: #e67e22;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .textos p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .imagens-pascoa {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+    }
+
+    .imagens-pascoa img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="ovos-container fade-in">
+    <div class="ovo ovo1" onclick="mostrarMensagem()"></div>
+    <div class="ovo ovo2" onclick="mostrarMensagem()"></div>
+    <div class="ovo ovo3" onclick="mostrarMensagem()"></div>
+  </div>
+
+  <div class="chocolate-topo fade-in"></div>
+
+  <div class="conteudo fade-in">
+    <h1>Feliz Páscoa!</h1>
+    <p>🐰🌸</p>
+  </div>
+
+  <div class="coelhinhos fade-in">
+    🐰 🐇 🐰 🐇 🐰
+  </div>
+
+  <div class="textos fade-in">
+    <h2>Tradições da Páscoa</h2>
+
+    <p>A <strong>Páscoa</strong> é uma das datas comemorativas mais queridas ao redor do mundo. Ela simboliza <em>renovação</em>, <i>vida nova</i> e o início da primavera em muitos lugares.</p>
+
+    <p>Você sabia que o coelho da Páscoa tem origem em tradições germânicas? Ele é símbolo de fertilidade e de novos começos. <em>Além disso</em>, ovos decorados fazem parte da celebração desde tempos antigos.</p>
+
+    <p>Durante a Semana Santa, muitas famílias se reúnem para celebrar juntas. É comum trocar <del>presentes caros</del> por gestos simples, como um <strong>ovo de chocolate</strong> feito com carinho.</p>
+
+    <p>Ovos pintados à mão são tradição em vários países, como na Ucrânia e na Polônia. Aliás, o nome para esses ovos decorados é <i>pysanky</i><sup>*</sup> — cada um carrega um <sub>significado</sub> simbólico.</p>
+
+    <p>Na Páscoa, vemos símbolos como: paz (&hearts;), amor (&infin;), união (&amp;), calor humano (&deg;), equilíbrio (&plusmn;) e gratidão (&copy;) espalhados por mensagens, embalagens e cartões. E a gente ama isso ♥</p>
+
+    <p>No Brasil, estima-se que mais de <strong>R$ 3 bilhões</strong> sejam movimentados em vendas de chocolates na época da Páscoa. A criatividade dos confeiteiros e artesãos deixa tudo mais mágico.</p>
+
+    <p>O coelhinho da Páscoa é o preferido da criançada.<br>Mas muitos adultos também esperam ansiosamente por esse momento especial do ano!<br>Comemorar nunca envelhece, né?</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Em muitos lugares, a caça aos ovos é uma tradição encantadora. Crianças e adultos participam juntos, espalhando alegria e criando memórias afetivas.</p>
+
+    <p>
+      A beleza da Páscoa está também em pequenos gestos. 
+      A felicidade de receber uma mensagem fofa...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ou encontrar aquele bombom escondido 🐣.
+    </p>
+
+    <p>
+      Algumas palavras da Páscoa exigem hifenização natural: reu\-nião, com\-pa\-nhe\-i\-rismo, pre\-sen\-tes, re\-nas\-cer, com\-par\-ti\-lhar, co\-e\-lho, cho\-co\-la\-te, sin\-ce\-ri\-da\-de, do\-çuras e a\-le\-gria.
+    </p>
+
+    <div class="imagens-pascoa">
+      <img src="coelho da pascoa.jpeg" alt="Coelho de Páscoa ">
+      <img src="ovos de pascoa.jpeg" alt="Ovo de chocolate ">
+      <img src="cesta de pascoa.jpeg" alt="Cesta de Páscoa ">
+      <img src="desenho no ovo.jpeg" alt="desenho">
+      <img src="feliz pascoa.jpeg" alt="feliz pascoa">
+    </div>
+  </div>
+
+  <script>
+    function mostrarMensagem() {
+      alert("Você encontrou um ovo surpresa! 🥚✨");
+    }
+  </script>
+</body>
+</html>
